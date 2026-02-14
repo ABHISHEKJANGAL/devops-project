@@ -1,20 +1,20 @@
-# DevOps Practice Project
+# DevOps Fleet Tracking Project
 
-This repository contains:
+## Backend
+- Java Spring Boot microservices:
+  - vehicle-service
+  - driver-service
+  - route-service
 
-✅ Ansible playbook to install Apache2 & Git  
-✅ Jenkins pipeline definition to automate this setup
+## Frontend
+- React / HTML dashboard with fleet analytics and map
 
-## How It Works
+## CI/CD
+- Jenkins pipeline builds and deploys services
+- Ansible playbook for environment setup
 
-1. Jenkins pipeline pulls this repo
-2. Jenkins executes the Ansible playbook
-3. The playbook installs:
-   - Git
-   - Apache2
-   - A sample HTML page
-
-## Files
-
-- `setup.yml` — Ansible playbook  
-- `Jenkinsfile` — Jenkins CI/CD pipeline  
+## How to Run
+1. Clone repo
+2. Run Ansible playbook
+3. Start Java microservices
+4. Open frontend dashboard
