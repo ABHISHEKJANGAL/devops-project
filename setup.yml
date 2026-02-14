@@ -1,9 +1,8 @@
 ---
 - hosts: localhost
   become: true
-
   tasks:
-    - name: Update apt packages
+    - name: Update packages
       apt:
         update_cache: yes
 
@@ -12,18 +11,12 @@
         name: git
         state: present
 
-    - name: Install Apache2 web server
+    - name: Install Java
       apt:
-        name: apache2
+        name: openjdk-17-jdk
         state: present
 
-    - name: Start Apache2 service
-      service:
-        name: apache2
-        state: started
-        enabled: true
-
-    - name: Create HTML page
-      copy:
-        dest: /var/www/html/index.html
-        content: "<h1>Abhishek Vechicle Tracking</h1>"
+    - name: Install PostgreSQL
+      apt:
+        name: postgresql
+        state: present
