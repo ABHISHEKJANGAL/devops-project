@@ -1,0 +1,22 @@
+
+---
+- name: Install and start Apache on web server
+  hosts: web
+  become: true
+
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start Apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Copy index.html to web server
+      copy:
+        content: "<h1>Welcome to DevOps Project</h1>"
+        dest: /var/www/html/index.html
